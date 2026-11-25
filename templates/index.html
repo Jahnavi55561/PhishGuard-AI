@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PhishGuard AI | Security Dashboard</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+        <h2>🛡️ PhishGuard</h2>
+        <p class="brand-subtitle">AI SECURITY SYSTEM</p>
+
+        <nav>
+            <a href="#dashboard" class="active">▦ Dashboard</a>
+            <a href="#scanner">⌕ Email Scanner</a>
+            <a href="#history">◷ Scan History</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span>● System Online</span>
+            <small>PhishGuard AI v1.0</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <h1>Security Dashboard</h1>
+                <p>Monitor and analyze suspicious emails</p>
+            </div>
+            <span class="status">● PROTECTION ACTIVE</span>
+        </header>
+
+        <section id="dashboard" class="stats-grid">
+
+            <div class="stat-card">
+                <p>Total Emails Scanned</p>
+                <h2 id="totalScans">0</h2>
+                <span>All analyzed emails</span>
+            </div>
+
+            <div class="stat-card">
+                <p>High Risk Emails</p>
+                <h2 id="highRisk">0</h2>
+                <span>Potential threats</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Medium Risk Emails</p>
+                <h2 id="mediumRisk">0</h2>
+                <span>Needs attention</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Low Risk Emails</p>
+                <h2 id="lowRisk">0</h2>
+                <span>Lower detected risk</span>
+            </div>
+
+        </section>
+
+        <section id="scanner" class="scanner-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Email Threat Scanner</h2>
+                    <p>Paste email content to analyze potential threats.</p>
+                </div>
+                <span class="scanner-icon">⌕</span>
+            </div>
+
+            <textarea
+                id="emailInput"
+                placeholder="Paste your suspicious email content here..."
+            ></textarea>
+
+            <button id="scanButton" onclick="analyzeEmail()">
+                Analyze Email →
+            </button>
+
+            <div id="result"></div>
+
+        </section>
+
+        <section id="history" class="history-card">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Scan History</h2>
+                    <p>Your recent email analysis results</p>
+                </div>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>EMAIL CONTENT</th>
+                            <th>RISK SCORE</th>
+                            <th>RISK LEVEL</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="historyBody">
+                        <tr>
+                            <td colspan="3">No scans yet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+        <footer>
+            PhishGuard AI © 2026 | Intelligent Email Threat Detection
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="/static/script.js"></script>
+<script src="/static/dashboard.js"></script>
+
+</body>
+</html>
